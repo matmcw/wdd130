@@ -1,0 +1,12 @@
+Logo:
+./M Logo.png
+
+Colors:
+Background - Black: #0C0910
+Text - White: #FFFFFF (or similar)
+Accent - Purple: #733ABF
+Call to action - pink: #CE4FED
+
+Fonts (all on google fonts):
+Headers - Audiowide
+Paragraphs - quantico or orbitron

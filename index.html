@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Page - Matthew McWilliams</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Matthew McWilliams Logo">
+        <h1>Matthew McWilliams</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="wwr/index.html">WWR</a>
+            <a href="ice.html">ICE</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Portal Page</h2>
+        <p>
+            This is my portal page for WDD 130. Here you can find links to all of my projects for the course. Feel free to explore and learn more about me and my projects!
+        </p>
+    </section>
+
+    <details class="dwwr">
+        <summary>WWR</summary>
+        <h3>White Water Rafting</h3>
+        <img src="images/wwr-hero.png" alt="White Water Rafting hero section screenshot">
+        <p>
+            This project was the first one completed for WWD 130. It was a great learning project that allowed me to practice my HTML and CSS skills. I created a website for a fictional white water rafting company, showcasing their services and activities.
+        </p>
+        <p>
+            The website features a hero section with a background image, a grid layout for the activities, and a contact card. I used various HTML elements and learned about stlying and fonts.
+        </p>
+        <img src="images/wwr-grid.png" alt="White Water Rafting activities grid showing rivers, camping, and rapids">
+    </details>
+
+    <details class="dice">
+        <summary>ICE</summary>
+        <h4>In-Class Exercises</h4>
+        <img src="images/ice-valentines.png" alt="Valentines Day holiday page screenshot">
+        <p>
+            ICE stands for In-Class Exercises. These are smaller projects that we complete during class time to practice specific skills and concepts. They were a great way to reinforce what we have learned and to experiment with new techniques.
+        </p>
+        <table>
+            <tr>
+                <th>Week</th>
+                <th>Name</th>
+                <th>Completed</th>
+            </tr>
+            <tr>
+                <td>Week 5</td>
+                <td>Prophet Card</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Week 5</td>
+                <td>Apostle Spotlight</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Week 6</td>
+                <td>Holiday Page</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Week 6</td>
+                <td>Favorite Devo</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Week 7</td>
+                <td>Country Flags</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Week 7</td>
+                <td>Positioning</td>
+                <td>✅</td>
+            </tr>
+        </table>
+    </details>
+
+    <details class="daboutme">
+        <summary>About Me</summary>
+        <h5>My Interests</h5>
+        <p>
+            I am a passionate student in the field of computer science. I love working with technology in many different forms to create, learn, and explore new ideas. I enjoy growing my skills and taking on new challenges. I can often be found exploring some of my various interests listed below.
+        </p>
+        <ul>
+            <li>Programming</li>
+            <li>Gaming</li>
+            <li>Travel</li>
+            <li>3D Printing</li>
+            <li>AI</li>
+            <li>Music</li>
+            <li>Rubiks Cubes</li>
+        </ul>
+    </details>
+
+    <details class="dform">
+        <summary>Form</summary>
+        <h6>Contact Me</h6>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="40"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </details>
+
+    <footer>
+        <p>Matthew McWilliams | WDD 130</p>
+    </footer>
+
+
+    <!-- Note that the following code was generated using AI. It is intended to showcase an interesting design technique, not JavaScript skill. -->
+    <script>
+        var allDetails = document.querySelectorAll('details');
+
+        var phases = [0, 1/6, 1/3, 0.5];
+        var duration = 10;
+
+        allDetails.forEach(function(detail, i) {
+            var summary = detail.querySelector('summary');
+            var hovered = false;
+            var t = 0;
+            var startPos = 0;
+
+            detail.addEventListener('mouseenter', function() { hovered = true; });
+            detail.addEventListener('mouseleave', function() { hovered = false; });
+
+            function getWavePosition(maxPos) {
+                var time = Date.now() / 1000;
+                var cycle = ((time / duration) + phases[i]) % 1;
+                var triangle = cycle < 0.5 ? cycle * 2 : 2 - cycle * 2;
+                return triangle * maxPos;
+            }
+
+            function animate() {
+                var containerWidth = detail.clientWidth;
+                var maxPos = containerWidth - 200;
+                var shouldExpand = hovered || detail.open;
+                var position = getWavePosition(maxPos);
+
+                if (shouldExpand) {
+                    if (t === 0) startPos = position;
+                    t = t + (1 - t) * 0.15;
+                    if (t > 0.999) t = 1;
+                } else if (t > 0) {
+                    t = t * 0.85;
+                    if (t < 0.001) t = 0;
+                    startPos = startPos + (position - startPos) * 0.08;
+                }
+
+                if (t > 0) {
+                    summary.style.marginLeft = (startPos * (1 - t)) + 'px';
+                    summary.style.width = (200 + (containerWidth - 200) * t) + 'px';
+                } else {
+                    summary.style.marginLeft = position + 'px';
+                    summary.style.width = '200px';
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        });
+    </script>
+</body>
+</html>

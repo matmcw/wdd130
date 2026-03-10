@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Favorite Devotionals</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-image">
+        <h1>My Favorite<br>Devotionals</h1>
+      </div>
+    </header>
+    <main>
+      <div class="content-box">
+        <table>
+          <tr>
+            <th>Speaker</th>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Year</th>
+          </tr>
+          <tr>
+            <td>Coming Closer to Jesus Christ</td>
+            <td>Dallin H. Oaks</td>
+            <td>Marriott Center, BYU</td>
+            <td>February 10, 2026</td>
+          </tr>
+          <tr>
+            <td>Elder Bruce C. & Sister Marie Hafen</td>
+            <td>“Severe Mercy”—Love and Sacrifice</td>
+            <td>I Center, BYU-I</td>
+            <td>January 27, 2026</td>
+          </tr>
+          <tr>
+            <td>Go and Do Thou Likewise</td>
+            <td>President Alvin F. Meredith III</td>
+            <td>I Center, BYU-I</td>
+            <td>January 13, 2026</td>
+          </tr>
+        </table>
+      </div>
+      <div class="content-box">
+        <h2>Add a Devotional</h2>
+        <form>
+          <label>Speaker</label>
+          <input type="text" name="speaker">
+          <label>Title</label>
+          <input type="text" name="title">
+          <label>Location</label>
+          <input type="text" name="location">
+          <label>Year</label>
+          <input type="text" name="year">
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const row = document.createElement('tr');
+      ['speaker', 'title', 'location', 'year'].forEach(name => {
+        const td = document.createElement('td');
+        td.textContent = this[name].value;
+        row.appendChild(td);
+      });
+      document.querySelector('table').appendChild(row);
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* Base styles */
+body {
+    margin: 0;
+    padding: 10px;
+    background: linear-gradient(180deg, #30123a 0%, #0b0710 50%, black 100%);
+    color: white;
+    font-family: quantico;
+}
+
+
+/* Header and Navbar */
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 999px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #CE4FED;
+}
+
+header h1 {
+    font-family: audiowide;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    margin: 5px 15px 5px auto;
+    padding: 10px 20px;
+    background-image: linear-gradient(90deg, #733ABF, #CE4FED);
+    border-radius: 999px;
+    align-items: center;
+}
+
+nav a {
+    font-family: quantico;
+    text-decoration: none;
+    color: white;
+    padding: 0 5px;
+}
+
+nav a:hover {
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Hero */
+section {
+    text-align: center;
+    padding: 60px 80px;
+}
+
+section h2 {
+    font-family: audiowide;
+    font-size: 2.5em;
+    letter-spacing: 4px;
+}
+
+section p {
+    max-width: 600px;
+    margin: 60px auto 0px auto;
+    font-size: 1em;
+}
+
+
+/* Sections (details elements) */
+details {
+    text-align: center; 
+    border-style: solid;
+    border-radius: 25px;
+    border-color: #CE4FED;
+    margin: 60px 15%;
+}
+
+details summary {
+    width: 200px;
+    height: 45px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-family: audiowide;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    background-image: linear-gradient(90deg, #733ABF, #CE4FED);
+    list-style: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #CE4FED;
+}
+
+details[open] summary {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: black;
+    color: lightgray;
+    border-radius: 999px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #CE4FED;
+    margin: 150px 10px 5px 10px;
+}
+
+footer p {
+    margin: 10px;
+}
+
+/* WWR */
+
+details[open].dwwr {
+    columns: 2;
+    column-gap: 0px;
+    padding-bottom: 20px;
+}
+
+.dwwr summary, .dwwr h3 {
+    column-span: all;
+}
+
+.dwwr h3 {
+    font-family: audiowide;
+    color: #CE4FED;
+    font-size: 1.5em;
+    margin: 30px;
+}
+
+.dwwr img {
+    width: calc(100% - 60px);
+    border-radius: 10px;
+    margin: 10px 30px;
+}
+
+.dwwr p {
+    max-width: calc(100% - 40px);
+    text-align: left;
+    margin: 10px 30px;
+}
+
+/* ICE */
+
+.dice h4 {
+    font-family: audiowide;
+    color: #CE4FED;
+    font-size: 1.5em;
+}
+
+.dice img {
+    width: 80%;
+    border-radius: 20px;
+    border: #CE4FED solid 2px;
+    margin: 20px 0px;
+}
+
+.dice p {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.dice table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+.dice th {
+    background-image: linear-gradient(90deg, #733ABF, #CE4FED);
+    padding: 10px;
+    font-family: audiowide;
+}
+
+.dice td {
+    padding: 10px 20px;
+    border-bottom: 1px solid #733ABF;
+}
+
+/* About Me */
+
+.daboutme h5 {
+    font-family: audiowide;
+    color: #CE4FED;
+    font-size: 1.5em;
+}
+
+.daboutme p {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.daboutme ul {
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+}
+
+.daboutme li {
+    background-image: linear-gradient(90deg, #733ABF, #CE4FED);
+    padding: 10px 20px;
+    border-radius: 999px;
+}
+
+/* Form */
+
+.dform h6 {
+    font-family: audiowide;
+    color: #CE4FED;
+    font-size: 1.5em;
+}
+
+.dform form {
+    width: 80%;
+    max-width: 400px;
+    margin: 0px auto 50px auto;
+    text-align: left;
+}
+
+.dform label {
+    display: block;
+    color: #CE4FED;
+    margin: 30px 0 5px 0;
+}
+
+.dform input, .dform textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #733ABF;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: quantico;
+    box-sizing: border-box;
+}
+
+.dform button {
+    margin-top: 30px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 999px;
+    background-image: linear-gradient(90deg, #733ABF, #CE4FED);
+    color: white;
+    font-family: audiowide;
+    cursor: pointer;
+}
+
+
+/* ICE Page Styling */
+
+.card {
+    display: flex;
+    gap: 10px;
+    min-height: 250px;
+    margin: 50px 15%;
+    padding: 15px;
+    border: 2px solid #CE4FED;
+    border-radius: 25px;
+}
+
+.card.reverse {
+    flex-direction: row-reverse;
+}
+
+.card img {
+    max-height: 250px;
+    max-width: calc(100% - 260px);
+    border-radius: 15px;
+}
+
+.card div {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    font-family: audiowide;
+    color: #CE4FED;
+    font-size: 1.5em;
+}
+
+.card p {
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.card a {
+    margin: 20px;
+    padding: 10px 20px;
+    background-image: linear-gradient(90deg, #733ABF, #CE4FED);
+    border-radius: 999px;
+    color: white;
+    text-decoration: none;
+    font-family: audiowide;
+}
