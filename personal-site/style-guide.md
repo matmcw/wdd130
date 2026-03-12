@@ -5,7 +5,7 @@
 - **Background:** #FFFFFF (white)
 - **Card Backgrounds:** #F5F5F5 (light gray)
 - **Buttons / Headings:** #FFD700 (vibrant yellow)
-- **Secondary Accent / Hover States:** #FFC107
+- **Secondary Accent / Hover States:** #FFC107 (darker yellow)
 - **Body Text:** #333333 (dark gray)
 
 ## Fonts (Google Fonts)
