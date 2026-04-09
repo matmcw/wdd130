@@ -320,3 +320,29 @@ details[open].dwwr {
     text-decoration: none;
     font-family: audiowide;
 }
+
+
+/* Final Report */
+
+.dclient h3, .dlead h3, .djunior h3, .dreflection h3 {
+    font-family: audiowide;
+    color: #CE4FED;
+    font-size: 1.2em;
+    padding: 0 30px;
+}
+
+.dclient p, .dlead p, .djunior p, .dreflection p {
+    padding: 0 30px;
+    text-align: left;
+}
+
+.report-link {
+    display: inline-block;
+    margin: 20px 10px 30px 30px;
+    padding: 10px 20px;
+    background-image: linear-gradient(90deg, #733ABF, #CE4FED);
+    border-radius: 999px;
+    color: white;
+    text-decoration: none;
+    font-family: audiowide;
+}
